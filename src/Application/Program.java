@@ -17,7 +17,7 @@ public class Program {
         ChessMatch chessMatch = new ChessMatch();
         List<ChessPiece> captured = new ArrayList<>();
 
-        while(true) {
+        while(!chessMatch.getCheckmate()) {
             UI.printMatch(chessMatch, captured);
             System.out.println();
             System.out.printf("Origem: ");
@@ -33,5 +33,6 @@ public class Program {
                 captured.add(capturedPiece);
             }
         }
+        UI.printMatch(chessMatch, captured);
     }
 }
